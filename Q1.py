@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.integrate import odeint, solve_ivp
 
 # Define the differential equations
-def model1(y, t):
+def model1(t,y):
     return t * np.exp(3*t) - 2*y
 
 def model2(t, y):
@@ -23,8 +23,8 @@ y0_1 = 0
 y0_2 = 1
 
 # Solve using odeint
-y_odeint1 = odeint(model1, y0_1, t1)
-y_odeint2 = odeint(model2, y0_2, t2)
+y_odeint1 = odeint(model1, y0_1, t1,tfirst=True)
+y_odeint2 = odeint(model2, y0_2, t2,tfirst=True)
 
 # Solve using solve_ivp
 sol_ivp1 = solve_ivp(model1, [0, 1], [y0_1], t_eval=t1)
@@ -83,6 +83,5 @@ plt.title('Error for ii)')
 plt.xlabel('t')
 plt.ylabel('Error')
 plt.legend()
-
 plt.tight_layout()
 plt.show()
