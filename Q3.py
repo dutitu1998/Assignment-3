@@ -10,12 +10,7 @@ def competition_model(t, z):
     return [dxdt, dydt]
 
 # Initial conditions for each case
-initial_conditions = [
-    (1.5, 3.5),  # Case a
-    (1, 1),      # Case b
-    (2, 7),      # Case c
-    (4.5, 0.5)   # Case d
-]
+initial_conditions = [(1.5, 3.5),(1, 1),(2, 7),(4.5, 0.5)]
 
 # Time span for the solution (in years)
 t_span = (0, 50)  # Solve from t = 0 to t = 50 years
